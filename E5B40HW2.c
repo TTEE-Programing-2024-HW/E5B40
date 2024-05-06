@@ -139,7 +139,7 @@ void drawRightTriangle(char ch) {
     clearScreen();
     char i;
     char j;
-    for (i = ch; i => 'a'; i--) {
+    for (i = ch; i >= 'a'; i--) {
         for (j = ch; j >= i; j--) {
             printf("%c", j);
         }
@@ -160,7 +160,7 @@ void drawMultiplicationTable(int n) {
     int j;
     for (i = 1; i <= n; i++) {
         for (j = 1; j <= n; j++) {
-            printf("%3d ", i * j);
+            printf("%dx%d=%2d ",i,j,i * j);
         }
         printf("\n");
     }
