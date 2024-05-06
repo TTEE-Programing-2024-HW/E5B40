@@ -23,6 +23,36 @@ int main() {
     // 歡迎畫面
     clearScreen();
     printf("歡迎使用我的程式！\n");
+    printf("*****************************************\n");
+    printf("*                                       *\n");
+    printf("*          Welcome to My Program        *\n");
+    printf("*                                       *\n");
+    printf("*     |-|    |-|      |-----------|     *\n");
+    printf("*     | |    | |      |----| |----|     *\n");
+    printf("*     | |    | |           | |          *\n");
+    printf("*     | -----| |           | |          *\n");
+    printf("*     | -----| |           | |          *\n");
+    printf("*     | |    | |           | |          *\n");
+    printf("*     | |    | |      |----| |----|     *\n");
+    printf("*     |-|    |-|      |-----------|     *\n");
+    printf("*                                       *\n");
+    printf("*     *****************************     *\n");
+    printf("*             *            *            *\n");
+    printf("*           *   *        *   *          *\n");
+    printf("*         *       *    *       *        *\n");
+    printf("*                                       *\n");
+    printf("*                                       *\n");
+    printf("*                                       *\n");
+    printf("*            *               *          *\n");
+    printf("*             *             *           *\n");
+    printf("*              *************            *\n");
+    printf("*                                       *\n");
+    printf("*****************************************\n");
+
+    printf("\nPress any key to continue...");
+    fflush(stdin); // 清空輸入緩衝區
+    system("PAUSE"); // 等待使用者按下任意鍵
+    system("CLS"); // 清除畫面
 
     // 密碼驗證
     while (attempts < 3) {
