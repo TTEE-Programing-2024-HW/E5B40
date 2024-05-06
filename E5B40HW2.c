@@ -70,6 +70,7 @@ int main() {
     // 如果輸入次數超過三次，結束程式
     if (attempts >= 3) {
         printf("輸入次數超過三次，程式結束。\n");
+        system("PAUSE"); // 等待使用者按下任意鍵
         return 1;
     }
 
@@ -101,6 +102,7 @@ int main() {
                     break;
                 } else if (choice == 'n' || choice == 'N') {
                     printf("程式結束。\n");
+                    system("PAUSE"); // 等待使用者按下任意鍵
                     return 0;
                 } else {
                     printf("錯誤的輸入，請重新輸入。\n");
