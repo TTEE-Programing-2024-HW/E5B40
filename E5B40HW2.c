@@ -139,8 +139,8 @@ void drawRightTriangle(char ch) {
     clearScreen();
     char i;
     char j;
-    for (i = 'a'; i <= ch; i++) {
-        for (j = i; j >= 'a'; j--) {
+    for (i = ch; i => 'a'; i--) {
+        for (j = ch; j >= i; j--) {
             printf("%c", j);
         }
         printf("\n");
