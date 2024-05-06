@@ -99,7 +99,7 @@ int main() {
                 choice = getValidCharInput();
                 if (choice == 'y' || choice == 'Y') {
                     clearScreen();
-                    break;
+                    break; 
                 } else if (choice == 'n' || choice == 'N') {
                     printf("程式結束。\n");
                     system("PAUSE"); // 等待使用者按下任意鍵
