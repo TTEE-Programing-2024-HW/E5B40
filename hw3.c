@@ -197,11 +197,28 @@ void chooseSeats(char seats[ROWS][COLS]) {
 int main() {
     char seats[ROWS][COLS];
     
-    displayWelcomeScreen();
-    if (!validatePassword()) {
-        printf("Too many incorrect attempts. Exiting...\n");
+    displayWelcomeScreen(); //welcome
+    
+    int attempts=0;
+    while (attempts < 3) {
+        printf("Please enter a four-digit password.¡G");
+        char input[5];
+        scanf("%s", input);
+        if (strcmp(input, PASSWORD) == 0) {
+            break;
+        } else {
+            attempts++;
+            printf("Incorrect password, please try again.\n");
+        }
+    }
+
+    // if Exceeding three attempts, the program will terminate.
+    if (attempts >= 3) {
+        printf("Exceeding three attempts, the program will terminate.\n");
+        system("PAUSE"); // Waiting for the user to press any key.
         return 1;
     }
+
 
     clearScreen();
     initializeSeats(seats);
