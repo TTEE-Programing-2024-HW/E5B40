@@ -234,18 +234,37 @@ int main() {
                 getch();
                 clearScreen();
                 break;
-            case 'b': {
-                int numSeats;
-                printf("How many seats do you need? (1-4): ");
-                scanf("%d", &numSeats);
-                if (numSeats >= 1 && numSeats <= 4) {
-                    bookSeats(seats, numSeats);
-                } else {
-                    printf("Invalid number of seats. Returning to main menu.\n");
-                }
-                clearScreen();
-                break;
+           case 'b': {
+    int numSeats;
+    printf("How many seats do you need? (1-4): ");
+    scanf("%d", &numSeats);
+    if (numSeats >= 1 && numSeats <= 4) {
+        if (numSeats < 4) {
+            // Arrange for 1-3 seats
+            arrangeSeats(seats, numSeats);
+        } else {
+            // Arrange for 4 seats
+            printf("1. Consecutive seats in the same row\n");
+            printf("2. Two seats in each of two consecutive rows\n");
+            printf("Choose an option (1 or 2): ");
+            int option;
+            scanf("%d", &option);
+            if (option == 1) {
+                arrangeSeats(seats, 4); // Consecutive seats in the same row
+            } else if (option == 2) {
+                // Two seats in each of two consecutive rows
+                arrangeSeats(seats, 2);
+                arrangeSeats(seats, 2);
+            } else {
+                printf("Invalid option. Returning to main menu.\n");
             }
+        }
+    } else {
+        printf("Invalid number of seats. Returning to main menu.\n");
+    }
+    clearScreen();
+    break;
+}
             case 'c':
                 chooseSeats(seats);
                 clearScreen();
