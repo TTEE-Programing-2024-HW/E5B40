@@ -204,9 +204,11 @@ int main() {
         printf("Please enter a four-digit password.¡G");
         char input[5];
         scanf("%s", input);
-        if (strcmp(input, PASSWORD) == 0) {
+        if (strcmp(input, "PASSWORD") == 0) 
+        {
             break;
-        } else {
+        } 
+        else {
             attempts++;
             printf("Incorrect password, please try again.\n");
         }
@@ -215,6 +217,7 @@ int main() {
     // if Exceeding three attempts, the program will terminate.
     if (attempts >= 3) {
         printf("Exceeding three attempts, the program will terminate.\n");
+        printf("Press any key to continue...");
         system("PAUSE"); // Waiting for the user to press any key.
         return 1;
     }
@@ -257,16 +260,24 @@ int main() {
                 arrangeSeats(seats, 2);
             } else {
                 printf("Invalid option. Returning to main menu.\n");
+                printf("Press any key to continue...");
+                system("PAUSE");
+                clearScreen();
             }
         }
     } else {
         printf("Invalid number of seats. Returning to main menu.\n");
+        printf("Press any key to continue...");
+         system("PAUSE");
+        clearScreen();
     }
     clearScreen();
     break;
 }
             case 'c':
                 chooseSeats(seats);
+                printf("Press any key to continue...");
+                 system("PAUSE");
                 clearScreen();
                 break;
            case 'd':
@@ -274,17 +285,23 @@ int main() {
              char confirm = getch();
              if (confirm == 'n') {
                printf("Exiting...\n");
+                system("PAUSE");
+                clearScreen();
                return 0;
              } else if (confirm == 'y') {
                   clearScreen();
                     break;
               } else {
                   printf("Invalid input. Please try again.\n");
+                  printf("Press any key to continue...");
+                   system("PAUSE");
                   clearScreen();
                      break;
                       }
             default:
                     printf("Please enter 'a', 'b', 'c', or 'd'. Don't try to do something strange.\n");
+                    printf("Press any key to continue...");
+                   system("PAUSE");
                     clearScreen();
                     break;
         }
