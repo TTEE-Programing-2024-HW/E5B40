@@ -284,11 +284,11 @@ int main() {
                      break;
                       }
             default:
-                printf("Invalid choice. Please try again.\n");
-                clearScreen();
-                break;
+                    printf("Please enter 'a', 'b', 'c', or 'd'. Don't try to do something strange.\n");
+                    clearScreen();
+                    break;
         }
-    } while (choice != 'd');
-
+    } 
+    while (choice != 'd');
     return 0;
 }
