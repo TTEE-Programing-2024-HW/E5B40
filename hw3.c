@@ -23,15 +23,38 @@ void clearScreen() {
 }
 
 void displayWelcomeScreen() {
+     clearScreen();
+    printf("Welcome to my program!\n");
     printf("*****************************************\n");
     printf("*                                       *\n");
-    printf("*         Welcome to Our System         *\n");
+    printf("*          Welcome to My Program        *\n");
+    printf("*                                       *\n");
+    printf("*     |-|    |-|      |-----------|     *\n");
+    printf("*     | |    | |      |----| |----|     *\n");
+    printf("*     | |    | |           | |          *\n");
+    printf("*     | -----| |           | |          *\n");
+    printf("*     | -----| |           | |          *\n");
+    printf("*     | |    | |           | |          *\n");
+    printf("*     | |    | |      |----| |----|     *\n");
+    printf("*     |-|    |-|      |-----------|     *\n");
+    printf("*                                       *\n");
+    printf("*     *****************************     *\n");
+    printf("*             *            *            *\n");
+    printf("*           *   *        *   *          *\n");
+    printf("*         *       *    *       *        *\n");
+    printf("*                                       *\n");
+    printf("*                                       *\n");
+    printf("*                                       *\n");
+    printf("*            *               *          *\n");
+    printf("*             *             *           *\n");
+    printf("*              *************            *\n");
     printf("*                                       *\n");
     printf("*****************************************\n");
-    printf("*                                       *\n");
-    printf("*            Enter Password:            *\n");
-    printf("*                                       *\n");
-    printf("*****************************************\n");
+
+    printf("Press any key to continue...");
+    fflush(stdin); // 清空輸入緩衝區
+    system("PAUSE"); // 等待使用者按下任意鍵
+    system("CLS"); // 清除畫面
 }
 
 void displayMainMenu() {
@@ -173,14 +196,15 @@ void chooseSeats(char seats[ROWS][COLS]) {
 
 int main() {
     char seats[ROWS][COLS];
-    initializeSeats(seats);
-
+    
+    displayWelcomeScreen();
     if (!validatePassword()) {
         printf("Too many incorrect attempts. Exiting...\n");
         return 1;
     }
 
     clearScreen();
+    initializeSeats(seats);
     char choice;
     do {
         displayMainMenu();
