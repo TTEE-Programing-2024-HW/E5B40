@@ -219,7 +219,6 @@ int main() {
         return 1;
     }
 
-
     clearScreen();
     initializeSeats(seats);
     char choice;
@@ -251,17 +250,20 @@ int main() {
                 chooseSeats(seats);
                 clearScreen();
                 break;
-            case 'd':
-                printf("Continue? (y/n)\n");
-                char confirm = getch();
-                if (confirm == 'n') {
-                    printf("Exiting...\n");
-                    return 0;
-                } else if (confirm != 'y') {
-                    printf("Invalid input. Returning to main menu...\n");
-                }
-                clearScreen();
-                break;
+           case 'd':
+             printf("Continue? (y/n)\n");
+             char confirm = getch();
+             if (confirm == 'n') {
+               printf("Exiting...\n");
+               return 0;
+             } else if (confirm == 'y') {
+                  clearScreen();
+                    break;
+              } else {
+                  printf("Invalid input. Please try again.\n");
+                  clearScreen();
+                     break;
+                      }
             default:
                 printf("Invalid choice. Please try again.\n");
                 clearScreen();
