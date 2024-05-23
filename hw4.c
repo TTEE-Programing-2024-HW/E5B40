@@ -1,7 +1,11 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <time.h>
+#include <conio.h> 
 
+#define PASSWORD 2024
+#define MAX_ATTEMPTS 3
 // 定義學生結構
 typedef struct {
     char name[50];
@@ -78,6 +82,38 @@ int main() {
 // 顯示歡迎畫面
 void displayWelcomeScreen() {
     clearScreen();
+      printf("Welcome to my program!\n");
+    printf("*****************************************\n");
+    printf("*                                       *\n");
+    printf("*          Welcome to My Program        *\n");
+    printf("*                                       *\n");
+    printf("*     |-|    |-|      |-----------|     *\n");
+    printf("*     | |    | |      |----| |----|     *\n");
+    printf("*     | |    | |           | |          *\n");
+    printf("*     | -----| |           | |          *\n");
+    printf("*     | -----| |           | |          *\n");
+    printf("*     | |    | |           | |          *\n");
+    printf("*     | |    | |      |----| |----|     *\n");
+    printf("*     |-|    |-|      |-----------|     *\n");
+    printf("*                                       *\n");
+    printf("*     *****************************     *\n");
+    printf("*             *            *            *\n");
+    printf("*           *   *        *   *          *\n");
+    printf("*         *       *    *       *        *\n");
+    printf("*                                       *\n");
+    printf("*                                       *\n");
+    printf("*                                       *\n");
+    printf("*            *               *          *\n");
+    printf("*             *             *           *\n");
+    printf("*              *************            *\n");
+    printf("*                                       *\n");
+    printf("*****************************************\n");
+    
+    printf("Press any key to continue...");
+    fflush(stdin); // 清空輸入緩衝區
+    system("PAUSE"); // 等待使用者按下任意鍵
+    system("CLS"); // 清除畫面
+    
     printf("*****************************\n");
     printf("*   歡迎使用簡易成績系統   *\n");
     printf("*   請輸入4位數字的密碼   *\n");
