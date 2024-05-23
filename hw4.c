@@ -46,10 +46,13 @@ int main() {
             attempts++;
         }
     }
-    if (attempts == 3)
+    
+    if (attempts == 3)//如果嘗試三次，程式關閉 
     {
-                return 0;
-                }
+       printf("輸入錯誤三次，程式關閉");
+       system("PAUSE"); // 等待使用者按下任意鍵           
+      return 0;
+     }
 
     // 顯示主選單
     while (1) {
