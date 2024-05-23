@@ -248,23 +248,29 @@ void searchGrades(Student students[], int n) {
 // 成績排名
 void gradeRanking(Student students[], int n) {
     clearScreen();
-    Student temp;
+    // 創建一個暫時的學生結構數組，用於排序
+    Student tempStudents[n];
+    // 將原始資料複製到暫時的數組中
     int i,j;
-
+    for (i = 0; i < n; i++) {
+        tempStudents[i] = students[i];
+    }
+    // 對暫時的數組按平均成績排序
     for (i = 0; i < n - 1; i++) {
         for (j = i + 1; j < n; j++) {
-            if (students[i].average < students[j].average) {
-                temp = students[i];
-                students[i] = students[j];
-                students[j] = temp;
+            if (tempStudents[i].average < tempStudents[j].average) {
+                Student temp = tempStudents[i];
+                tempStudents[i] = tempStudents[j];
+                tempStudents[j] = temp;
             }
         }
     }
-    
-    printf("按平均成績高低排序如下：\n");
+    // 顯示排序後的學生資料
+    printf("所有學生的成績如下：\n");
     for (i = 0; i < n; i++) {
-        printf("姓名：%s, 學號：%d, 平均成績：%.1f\n",
-               students[i].name, students[i].id, students[i].average);
+        printf("姓名：%s, 學號：%d, 數學：%d, 物理：%d, 英文：%d, 平均成績：%.1f\n",
+               tempStudents[i].name, tempStudents[i].id, tempStudents[i].math,
+               tempStudents[i].physics, tempStudents[i].english, tempStudents[i].average);
     }
     pressAnyKey();
 }
