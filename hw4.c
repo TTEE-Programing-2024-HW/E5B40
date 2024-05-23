@@ -74,12 +74,19 @@ int main() {
                 gradeRanking(students, studentCount);
                 break;
             case 'e':
-                printf("確定離開？ (y/n)\n");
-                char exitChoice;
-                scanf(" %c", &exitChoice);
-                if (exitChoice == 'y' || exitChoice == 'Y') {
-                    return 0;
+                 while (1) {
+                    printf("確定離開？ (y/n)\n");
+                    char exitChoice;
+                    scanf(" %c", &exitChoice);
+                    if (exitChoice == 'y' || exitChoice == 'Y') {
+                        return 0;
+                    } else if (exitChoice == 'n' || exitChoice == 'N') {
+                        break; // 回到主選單
+                    } else {
+                        printf("無效的選項，請重新輸入。\n");
+                    }
                 }
+                break;
                 break;
             default:
                 printf("無效的選項，請重新輸入。\n");
