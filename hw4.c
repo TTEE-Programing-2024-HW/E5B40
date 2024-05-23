@@ -4,8 +4,6 @@
 #include <time.h>
 #include <conio.h> 
 
-#define PASSWORD 2024
-#define MAX_ATTEMPTS 3
 // 定義學生結構
 typedef struct {
     char name[50];
@@ -35,14 +33,23 @@ int main() {
 
     // 顯示歡迎畫面並要求輸入密碼
     displayWelcomeScreen();
-    while (!checkPassword() && attempts < 2) {
-        attempts++;
-    }
+    int password;
 
-    if (attempts == 2) {
-        printf("連續錯誤三次，程式結束。\n");
-        return 0;
+    while (attempts < 3) {
+        printf("請輸入密碼：");
+        scanf("%d", &password);
+        if (password == 2024) {
+            printf("歡迎進入系統！\n");
+            break;
+        } else {
+            printf("密碼錯誤！\n");
+            attempts++;
+        }
     }
+    if (attempts == 3)
+    {
+                return 0;
+                }
 
     // 顯示主選單
     while (1) {
@@ -115,24 +122,11 @@ void displayWelcomeScreen() {
     system("CLS"); // 清除畫面
     
     printf("*****************************\n");
-    printf("*   歡迎使用簡易成績系統   *\n");
-    printf("*   請輸入4位數字的密碼   *\n");
-    printf("*****************************\n");
+    printf("*   歡迎使用簡易成績系統    *\n");
+    printf("*   請輸入4位數字的密碼     *\n");
+    printf("*****************************\n\n\n\n\n");
 }
 
-// 檢查密碼
-int checkPassword() {
-    int password;
-    printf("請輸入密碼：");
-    scanf("%d", &password);
-    if (password == 2024) {
-        printf("歡迎進入系統！\n");
-        return 1;
-    } else {
-        printf("密碼錯誤！\n");
-        return 0;
-    }
-}
 
 // 顯示主選單
 void displayMainMenu() {
