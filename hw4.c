@@ -230,16 +230,18 @@ void searchGrades(Student students[], int n) {
     printf("請輸入要搜尋的學生姓名：");
     scanf("%s", searchName);
     int i;
+    int found=0;
     for (i = 0; i < n; i++) {
         if (strcmp(students[i].name, searchName) == 0) {
             printf("姓名：%s, 學號：%d, 數學：%d, 物理：%d, 英文：%d, 平均成績：%.1f\n",
                    students[i].name, students[i].id, students[i].math,
                    students[i].physics, students[i].english, students[i].average);
-            pressAnyKey();
-            return;
+            found++;
         }
     }
+    if (found>=1){
     printf("找不到該學生資料。\n");
+    }
     pressAnyKey();
 }
 
