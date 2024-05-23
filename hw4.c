@@ -287,3 +287,4 @@ void pressAnyKey() {
     getchar();
     getchar(); // 需要兩次getchar()，因為上一次輸入留有換行符
 }
+//
