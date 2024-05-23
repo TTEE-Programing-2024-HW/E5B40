@@ -165,34 +165,47 @@ void enterGrades(Student students[], int *n) {
     for (i = 0; i < *n; i++) {
         printf("請輸入第%d位學生的姓名：", i + 1);
         scanf("%s", students[i].name);
-        printf("請輸入學號（6位整數）：");
-        scanf("%d", &students[i].id);
-        if (students[i].id < 100000 || students[i].id > 999999) {
-            printf("學號錯誤，請重新輸入。\n");
-            i--;
-            continue;
+        
+        while (1) {
+            printf("請輸入學號（6位整數）：");
+            scanf("%d", &students[i].id);
+            if (students[i].id >= 100000 && students[i].id <= 999999) {
+                break;
+            } else {
+                printf("學號錯誤，請重新輸入。\n");
+            }
         }
-        printf("請輸入數學成績（0~100）：");
-        scanf("%d", &students[i].math);
-        if (students[i].math < 0 || students[i].math > 100) {
-            printf("成績錯誤，請重新輸入。\n");
-            i--;
-            continue;
+
+        while (1) {
+            printf("請輸入數學成績（0~100）：");
+            scanf("%d", &students[i].math);
+            if (students[i].math >= 0 && students[i].math <= 100) {
+                break;
+            } else {
+                printf("成績錯誤，請重新輸入。\n");
+            }
         }
-        printf("請輸入物理成績（0~100）：");
-        scanf("%d", &students[i].physics);
-        if (students[i].physics < 0 || students[i].physics > 100) {
-            printf("成績錯誤，請重新輸入。\n");
-            i--;
-            continue;
+
+        while (1) {
+            printf("請輸入物理成績（0~100）：");
+            scanf("%d", &students[i].physics);
+            if (students[i].physics >= 0 && students[i].physics <= 100) {
+                break;
+            } else {
+                printf("成績錯誤，請重新輸入。\n");
+            }
         }
-        printf("請輸入英文成績（0~100）：");
-        scanf("%d", &students[i].english);
-        if (students[i].english < 0 || students[i].english > 100) {
-            printf("成績錯誤，請重新輸入。\n");
-            i--;
-            continue;
+
+        while (1) {
+            printf("請輸入英文成績（0~100）：");
+            scanf("%d", &students[i].english);
+            if (students[i].english >= 0 && students[i].english <= 100) {
+                break;
+            } else {
+                printf("成績錯誤，請重新輸入。\n");
+            }
         }
+
         students[i].average = (students[i].math + students[i].physics + students[i].english) / 3.0;
     }
 }
